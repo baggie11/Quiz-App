@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Clock, Calendar as CalendarIcon, Tag } from 'lucide-react';
 import { type Session } from '../../types';
 import { API } from '../../api/config';
+import Footer from '../Footer';
 
 interface CreateSessionFormProps {
   addSession?: (newSession: Session) => void;
@@ -569,6 +570,7 @@ const CreateSessionForm: React.FC<CreateSessionFormProps> = ({
           </div>
         </div>
       </form>
+      <Footer/>
     </div>
   );
 };
