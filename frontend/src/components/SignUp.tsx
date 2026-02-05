@@ -172,7 +172,7 @@ const HostSignup: React.FC<HostSignupProps> = ({ toggleToLogin }) => {
         {/* Signup Button */}
         <button
           onClick={handleSignup}
-          className="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold font-semibold rounded-xl shadow hover:shadow-md transition"
+          className="w-full py-4 bg-white hover:from-gray-50 hover:to-grey-100 text-blue-600 font-semibold font-semibold rounded-xl shadow hover:shadow-md transition"
         >
           Create Account
         </button>
