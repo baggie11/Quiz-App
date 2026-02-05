@@ -5,7 +5,7 @@ import CreateSessionForm from '../CreateSession/CreateSessionForm';
 import AllSessionsPage from '../AllSessions/AllSessionsPage';
 import LoadingSpinner from '../Shared/LoadingSpinner';
 import { type UserType, type Session } from '../../types';
-
+import Footer from '../Footer';
 const Dashboard: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [user, setUser] = useState<UserType | null>(null);
@@ -88,6 +88,7 @@ const Dashboard: React.FC = () => {
           <main className="p-4 lg:p-8 h-[calc(100vh-64px)] overflow-y-auto">
             {renderContent()}
           </main>
+          <Footer/>
         </div>
       </div>
     </div>
