@@ -18,20 +18,23 @@ const HostAuthPage: React.FC = () => {
       <main className="max-w-4xl mx-auto px-6 py-12">
         {/* Toggle Buttons */}
         <div className="flex justify-center mb-10">
-          <div className="inline-flex rounded-xl bg-gray-100 p-1">
+          <div className="flex bg-gray-100 rounded-xl p-1 w-fit">
             <button
               onClick={toggleToLogin}
-              className={`px-8 py-3 rounded-lg font-semibold transition-all ${isLogin 
-                ? 'bg-white text-blue-600 shadow-sm' 
-                : 'text-gray-600 hover:text-gray-900'}`}
+              className={`w-28 py-2 rounded-lg font-semibold transition-all
+                ${isLogin 
+                  ? 'bg-white text-blue-600 shadow' 
+                  : 'text-gray-600'}`}
             >
               Login
             </button>
+          
             <button
               onClick={toggleToSignup}
-              className={`px-8 py-3 rounded-lg font-semibold transition-all ${!isLogin 
-                ? 'bg-white text-blue-600 shadow-sm' 
-                : 'text-gray-600 hover:text-gray-900'}`}
+              className={`w-28 py-2 rounded-lg font-semibold transition-all
+                ${!isLogin 
+                  ? 'bg-white text-blue-600 shadow' 
+                  : 'text-gray-600'}`}
             >
               Sign Up
             </button>
