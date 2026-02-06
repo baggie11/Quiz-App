@@ -3,6 +3,16 @@ import { User, Settings, HelpCircle, LogOut, ChevronDown } from 'lucide-react';
 
 const UserAccountDropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState<LoggedInUser | null>(null);
+  const navigate = useNavigate();
+    useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  if (!user) return null;
 
   return (
     <div className="relative">
@@ -15,8 +25,8 @@ const UserAccountDropdown: React.FC = () => {
           <User className="text-white" size={20} />
         </div>
         <div className="hidden md:block text-left">
-          <p className="text-sm font-medium text-gray-900">Alex Johnson</p>
-          <p className="text-xs text-gray-500">Instructor</p>
+          <p className="text-sm font-medium text-gray-900">{user.full_name}</p>
+          <p className="text-xs text-gray-500">{user.role ?? "Host"}</p>
         </div>
         <ChevronDown size={16} className="text-gray-500" />
       </button>
@@ -29,8 +39,8 @@ const UserAccountDropdown: React.FC = () => {
           />
           <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-20">
             <div className="px-4 py-3 border-b border-gray-100">
-              <p className="text-sm font-medium text-gray-900">Alex Johnson</p>
-              <p className="text-xs text-gray-500 mt-1">alex@quizvision.com</p>
+              <p className="text-sm font-medium text-gray-900">{user.full_name}</p>
+              <p className="text-xs text-gray-500 mt-1">{user.email}</p>
             </div>
             
             <div className="py-1">
